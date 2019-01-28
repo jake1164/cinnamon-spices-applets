@@ -9,6 +9,7 @@ You usually check updates for the Spices using Cinnamon Settings. But, like me, 
 The **Spices Update** applet plays these roles:
 
   * It warns you when the Spices you have installed need updates.
+  * Optional: It can also warn you when new Spices are available.
   * It gives you direct access to Cinnamon Settings for Applets, Desklets, Extensions and Themes.
 
 ## Status
@@ -17,15 +18,15 @@ Fully supported by the author, under continuing development and in continuous us
 
 ## Requirements
 
-The Spices Update requires the tool ```notify-send```.
+The Spices Update requires the ```notify-send``` tool and the ```symbola``` TrueType font.
 
 To install it:
 
-  * Fedora: ```sudo dnf install libnotify```
-  * Arch: ```sudo pacman -Syu libnotify```
-  * Linux Mint: ```sudo apt install libnotify-bin```
+  * Fedora: ```sudo dnf install libnotify gdouros-symbola-fonts```
+  * Arch: ```sudo pacman -Syu libnotify ttf-symbola```
+  * Linux Mint: ```sudo apt install libnotify-bin fonts-symbola```
 
-**This applet helps you to install this dependency, if any.**
+**This applet helps you to install this dependencies, if any.**
 
 ## Settings
 
@@ -36,8 +37,9 @@ The first, _General_, allows you to:
   * Select the _Time interval between two checks_ (in hours). Please note that the first check will take place one minute after starting this applet.
   * Select the ways to warn you : changing the appearance (by color changing) of the icon of this applet and/or displaying messages in the notification zone.
   * Select the _Type of display_ of the icon: with or without text?
+  * Hide the icon applet while nothing is to report.
 
-For the content of the other tabs (_Applets_, _Desklets_, etc), please look  at the screenshot above and note that **the list of installed Spices is automatically filled** at startup, but a button allows you to reload it.
+For the content of the other tabs (_Applets_, _Desklets_, etc), please look at the screenshot above and note that **the list of installed Spices is automatically filled** at startup, but a button allows you to reload it.
 
 Set to _FALSE_ all the Spices you _do not want_ to check updates. There are two reasons to do this:
 
@@ -50,12 +52,15 @@ In the menu of this applet:
 
   * a Refresh button allows you to force checking the availability of updates for your Spices;
   * a dot appears in front of each type of Spice when at least one update is available;
-  * a click on a type of Spice (Applets, Desklets, etc) opens the corresponding page in Cinnamon Settings;
+  * a click on a type of Spice (Applets, Desklets, etc) opens the Download tab of the corresponding page in Cinnamon Settings, with Spices sorted by date;
+  * when new Spices are available, an option _Forget new Spices_ appears; clicking it will clear these notifications of new spices, until others arrive;
   * a Configure... button opens the Settings.
 
 ## Icon
 
 The color of the icon changes when at least one of your Spices needs an update.
+
+Its tooltip (the message displayed when the icon is hovered) contains the list of spices to update, if any.
 
 ## Translations
 
